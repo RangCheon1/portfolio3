@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #f7f8f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 20px;
+    font-size: 20px;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 테이블 공통 스타일 */
+.info-table,
+.bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.info-table th,
+.info-table td,
+.bill-table th,
+.bill-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+    vertical-align: middle; /* 셀 내용 수직 정렬 */
+}
+
+/* 정보 테이블 스타일 */
+.info-table th {
+    background-color: #f9f9f9;
+    text-align: left;
+    width: 20%;
+}
+
+/* 납부 내역 테이블 스타일 */
+.bill-table th {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.bill-table td {
+    text-align: center;
+}
+
+/* 버튼 영역 */
+.button-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-area button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-area .print {
+    background-color: #6c757d;
+    color: white;
+}
+
+.button-area .print-list {
+    background-color: #dc3545;
+    color: white;
+}
+
+.button-area button:hover {
+    opacity: 0.9;
+}
+
+/* 라디오 버튼 정렬 */
+.radio-options label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.radio-options input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* 인쇄 전용 요소 */
+.print-only {
+    display: none;
+}
+
+/* 인쇄 모드 스타일 */
+@media print {
+    .print-only {
+        display: inline-block;       /* 인쇄 시 표시 */
+        font-weight: bold;
+        vertical-align: middle;      /* ✅ 핵심: 수직 중앙 정렬 */
+        line-height: 1.6;            /* ✅ 선택: 높이 조정 */
+        margin: 0;                   /* 인쇄 시 불필요한 여백 제거 */
+    }
+
+    .button-area,
+    .radio-options {
+        display: none !important;
+    }
+
+    input[type="radio"],
+    label {
+        display: none !important;
+    }
+}
